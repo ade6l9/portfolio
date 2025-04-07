@@ -1,12 +1,37 @@
-# React + Vite
+# Adelina Dautovic — Portfolio 💻✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio! Built with **React**, **Vite**, and **Tailwind CSS**, this site showcases who I am, what I build, and how I think as a Full-Stack Developer and Computer Science student.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 About This Project
 
-## Expanding the ESLint configuration
+This is a responsive, animated portfolio built from scratch using:
+- ⚛ **React** — component-based front-end
+-  **Vite** — super fast dev build tool
+-  **Tailwind CSS** — clean utility-first styling
+-  **Framer Motion** — smooth, subtle animations
+-  **Git & GitHub** — version control & deployment
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Features
+
+- Fully responsive layout
+- One-page smooth scroll navigation
+- Animated sections (Home, About, Projects, Contact)
+- Styled resume download button
+- Project cards with hover effects and live links
+- GitHub + LinkedIn contact info
+
+---
+
+## 🛠️ Installation
+
+If you’d like to run this project locally:
+
+```bash
+git clone https://github.com/ade6l9/portfolio.git
+cd portfolio
+npm install
+npm run dev
