@@ -1,36 +1,61 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react"; // For icons
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Prevent background scroll when mobile nav is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
+
   return (
-    <nav className="bg-gray-900 text-white p-4 w-full shadow-lg">
-      <div className="w-full max-w-7xl mx-auto flex justify-between items-center px-6">
-        <h1 className="text-2xl font-bold">My Portfolio</h1>
-        {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+    <nav className="bg-gray-950 text-white w-full fixed top-0 z-50 shadow-md">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span className="text-[30px] font-medium text-blue-400">
+          Adelina Dautovic
+      </span>
+
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-10 text-lg">
-          <Link to="/" className="hover:text-gray-400">Home</Link>
-          <Link to="/projects" className="hover:text-gray-400">Projects</Link>
-          <Link to="/about" className="hover:text-gray-400">About</Link>
-          <Link to="/contact" className="hover:text-gray-400">Contact</Link>
+        <div className="hidden md:flex space-x-8 text-md">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="hover:text-blue-400 transition"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
+        {/* Mobile Toggle */}
+        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
-      <div className={`md:hidden transition-all duration-300 ${isOpen ? "block" : "hidden"}`}>
-        <div className="flex flex-col items-center bg-gray-800 p-4 space-y-4 rounded-lg w-full">
-          <Link to="/" className="w-full text-center py-2 hover:bg-gray-700 rounded">Home</Link>
-          <Link to="/projects" className="w-full text-center py-2 hover:bg-gray-700 rounded">Projects</Link>
-          <Link to="/about" className="w-full text-center py-2 hover:bg-gray-700 rounded">About</Link>
-          <Link to="/contact" className="w-full text-center py-2 hover:bg-gray-700 rounded">Contact</Link>
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden flex flex-col items-center bg-gray-800 space-y-4 py-4">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-white hover:text-blue-400 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      </div>
+      )}
     </nav>
   );
 }

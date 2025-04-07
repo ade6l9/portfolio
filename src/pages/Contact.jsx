@@ -1,18 +1,55 @@
+import { motion } from "framer-motion";
+
 export default function Contact() {
   return (
-    <div className="min-h-screen w-full bg-gray-900 text-white flex justify-center">
-      <div className="w-full max-w-7xl px-6 text-center flex flex-col justify-center">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">Contact Me</h1>
-        <p className="text-lg sm:text-xl mb-2">📧 Email: <a href="mailto:adelinadau@gmail.com" className="text-blue-400 underline">adelinadau@gmail.com</a></p>
-        <p className="text-lg sm:text-xl mb-2">🔗 GitHub: <a href="https://github.com/ade6l9" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">github.com/ade6l9</a></p>
-        <p className="text-lg sm:text-xl mb-4">📄 <a href="/Resume%20Microsoft.pdf" download className="text-blue-400 underline">Download My Resume</a></p>
+    <section id="contact" className="min-h-screen flex items-center justify-center px-6">
+      <motion.div
+        className="text-center max-w-2xl text-white"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl font-bold mb-4 text-blue-400">Contact Me</h2>
 
-        <p className="text-md sm:text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
-          I’m open to collaborations, software development roles, and internships.
-          I’m also always open to learning about new tools, ideas, or technologies—if you have something interesting to share or build,
-          reach out! I'd love to hear it.
+        <p className="text-lg mb-2">
+          📧{" "}
+          <a
+            href="mailto:adelinadau@gmail.com"
+            className="text-blue-400 underline"
+          >
+            adelinadau@gmail.com
+          </a>
         </p>
-      </div>
-    </div>
+
+        <p className="text-lg mb-2">
+          🔗{" "}
+          <a
+            href="https://github.com/ade6l9"
+            className="text-blue-400 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/ade6l9
+          </a>
+        </p>
+
+        <p className="text-lg mb-4">
+          💼{" "}
+          <a
+            href="https://www.linkedin.com/in/adelinadautovic"
+            className="text-blue-400 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/adelinadautovic
+          </a>
+        </p>
+
+        <p className="text-gray-400 max-w-xl mx-auto text-sm sm:text-base">
+          I'm open to collaborations, internships, or just learning something
+          new. If you’ve got something interesting — let’s connect! 🚀
+        </p>
+      </motion.div>
+    </section>
   );
 }
