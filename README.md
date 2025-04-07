@@ -1,4 +1,4 @@
-# Adelina Dautovic — Portfolio 💻✨
+# Adelina Dautovic — Portfolio 
 
 Welcome to my personal developer portfolio! Built with **React**, **Vite**, and **Tailwind CSS**, this site showcases who I am, what I build, and how I think as a Full-Stack Developer and Computer Science student.
 
