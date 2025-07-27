@@ -37,7 +37,7 @@ export default function Home() {
           </motion.p>
 
           <a
-            href="/Resume%20Microsoft.pdf"
+            href="./Resume.pdf"
             download
             className="inline-block px-5 py-2 border border-blue-400 text-blue-400 rounded-md font-semibold hover:bg-blue-400 hover:text-white transition duration-300"
           >
